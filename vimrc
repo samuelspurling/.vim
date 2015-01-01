@@ -1,2 +1,3 @@
-source linux_vimrc
-source common_vimrc
+let $VIMHOME=expand('<sfile>:p:h')
+source $VIMHOME/linux_vimrc
+source $VIMHOME/common_vimrc
