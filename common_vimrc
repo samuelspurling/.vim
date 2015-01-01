@@ -1,0 +1,42 @@
+set background=dark
+set backspace=indent,eol,start
+set fileencodings=ucs-bom,utf-8,default,latin1
+set helplang=en
+set history=700
+set undolevels=700
+set nomodeline
+set printoptions=paper:a4
+set ruler
+set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
+set termencoding=utf-8
+set window=25
+" vim: set ft=vim :
+set hlsearch
+set nu rnu
+set ai
+set nobackup
+set noswapfile
+let g:fuzzy_ignore = "*.png;*.PNG;*.JPG;*.jpg;*.GIF;*.gif;vendor/**;coverage/**;tmp/**;rdoc/**"
+" set pastetoggle=<F2>
+" set clipboard=unnamed
+set smartcase
+set ignorecase
+set incsearch
+let g:pymode_rope = 0
+map <F5> :syntax sync fromstart<CR>
+set tabstop=4 softtabstop=4 shiftwidth=4
+nmap <Space> i_<Esc>r
+" highlight Test ctermbg=black guibg=black
+" match Test /\t/
+filetype plugin on
+set omnifunc=pythoncomplete#Complete
+map <Leader>pw ciw<C-r>0<Esc>
+map <Leader>pp a<C-r>0<Esc>
+" map <C-s> :w<CR><Esc>
+iab docid document.GetElementById('')<Esc>hh
+" set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸\ 
+set list
+call pathogen#infect()
+colors molokai
+autocmd BufEnter * :syntax sync fromstart
