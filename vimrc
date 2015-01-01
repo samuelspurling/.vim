@@ -49,7 +49,7 @@ map <Leader>pp a<C-r>0<Esc>
 " map <C-s> :w<CR><Esc>
 iab docid document.GetElementById('')<Esc>hh
 " set listchars=tab:▸\ ,eol:¬
-set listchars=tab:▸\ 
+set listchars=tab:\|\ 
 set list
 if $COLORTERM == 'gnome-terminal'
   set t_Co=256
