@@ -24,7 +24,8 @@ set ignorecase
 set incsearch
 let g:pymode_rope = 0
 map <F5> :syntax sync fromstart<CR>
-set tabstop=4 softtabstop=4 shiftwidth=4
+"set tabstop=4 softtabstop=4 shiftwidth=4
+set noet ci pi sts=0 sw=4 ts=4 "Indent with tabs, align with spaces
 nmap <Space> i_<Esc>r
 " highlight Test ctermbg=black guibg=black
 " match Test /\t/
@@ -40,3 +41,5 @@ set list
 call pathogen#infect()
 colors molokai
 autocmd BufEnter * :syntax sync fromstart
+set foldcolumn=1
+nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>

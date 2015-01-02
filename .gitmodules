@@ -12,7 +12,7 @@
 	url = https://github.com/garbas/vim-snipmate.git
 [submodule "bundle/vim-easymotion"]
 	path = bundle/vim-easymotion
-	url = git://github.com/Lokaltog/vim-easymotion.git
+	url = https://github.com/Lokaltog/vim-easymotion.git
 [submodule "bundle/tlib_vim"]
 	path = bundle/tlib_vim
 	url = https://github.com/tomtom/tlib_vim.git
