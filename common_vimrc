@@ -39,7 +39,6 @@ iab docid document.GetElementById('')<Esc>hh
 set listchars=tab:\|\ 
 set list
 call pathogen#infect()
-colors molokai
 autocmd BufEnter * :syntax sync fromstart
 set foldcolumn=1
 nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
