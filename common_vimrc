@@ -42,3 +42,4 @@ call pathogen#infect()
 autocmd BufEnter * :syntax sync fromstart
 set foldcolumn=1
 nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
+set spelllang=en_gb
