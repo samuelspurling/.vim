@@ -34,7 +34,7 @@ set omnifunc=pythoncomplete#Complete
 map <Leader>pw ciw<C-r>0<Esc>
 map <Leader>pp a<C-r>0<Esc>
 " map <C-s> :w<CR><Esc>
-iab docid document.GetElementById('')<Esc>hh
+iab docid document.getElementById('')<Esc>hh
 " set listchars=tab:▸\ ,eol:¬
 set listchars=tab:\|\ 
 set list
