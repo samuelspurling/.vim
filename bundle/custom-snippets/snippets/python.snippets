@@ -1,0 +1,38 @@
+snippet psyco
+	print "Content-type: text/plain; charset=iso-8859-1\n\n"
+	
+	import cgi
+	import psycopg2
+	import json
+	from ConfigParser import SafeConfigParser
+	
+	parser = SafeConfigParser()
+	parser.read('config.ini')
+	
+	arguments = cgi.FieldStorage()
+	
+	${1:feature} = json.loads(str(arguments['${2:$1}'].value))
+	
+	conn_string = "host='' dbname='' user='' password=''"
+	conn = psycopg2.connect(conn_string)
+	cur = conn.cursor()
+	
+	sql = '''
+	${3}
+	'''
+	params = ($2['${4}'],)
+	
+	cur.execute(sql, params)
+	conn.commit()
+	cur.close()
+	conn.close()
+	print 'done'
+snippet sql
+	sql = '''
+	${1}
+	'''
+	params = (${2},)
+snippet ex
+	cur.execute(${1:sql},${2:params})
+	result = cur.fetchall()
+
