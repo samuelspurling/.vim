@@ -32,6 +32,11 @@ nmap <Space> i_<Esc>r
 filetype plugin on
 set omnifunc=pythoncomplete#Complete
 map <Leader>pw ciw<C-r>0<Esc>
+map <Leader>p' ci'<C-r>0<Esc>
+map <Leader>p" ci"<C-r>0<Esc>
+map <Leader>p( ci(<C-r>0<Esc>
+map <Leader>p{ ci{<C-r>0<Esc>
+map <Leader>p[ ci[<C-r>0<Esc>
 map <Leader>pp a<C-r>0<Esc>
 " map <C-s> :w<CR><Esc>
 iab docid document.getElementById('')<Esc>hh
