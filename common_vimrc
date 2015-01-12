@@ -37,7 +37,8 @@ map <Leader>p" ci"<C-r>0<Esc>
 map <Leader>p( ci(<C-r>0<Esc>
 map <Leader>p{ ci{<C-r>0<Esc>
 map <Leader>p[ ci[<C-r>0<Esc>
-map <Leader>pp a<C-r>0<Esc>
+map <Leader>pp "0p
+map <Leader>op o<C-r>0<Esc>
 " map <C-s> :w<CR><Esc>
 iab docid document.getElementById('')<Esc>hh
 " set listchars=tab:▸\ ,eol:¬
