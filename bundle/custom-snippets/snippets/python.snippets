@@ -1,6 +1,7 @@
 snippet psyco
 	print "Content-type: text/plain; charset=iso-8859-1\n\n"
 	
+	from os import environ
 	import cgi
 	import psycopg2
 	import json
@@ -36,3 +37,40 @@ snippet ex
 	cur.execute(${1:sql},${2:params})
 	result = cur.fetchall()
 
+snippet logfile
+	with open('log_file.txt','a') as log_file:
+		log_file.write(${1:sql % params})
+
+snippet logdef
+	def logerror(params,error):
+		with open(parser.get('log', 'logpath') + str(uuid4()) + '.txt','a') as log_file:
+			log_file.write(str(datetime.datetime.now()) + '\n')
+			log_file.write(environ['REMOTE_USER'] + '\n')
+			log_file.write('`Filename()`.py')
+			log_file.write('### PARAMS ###\n')
+			log_file.write(str(params) + '\n')
+			log_file.write('### ERROR ###\n')
+			log_file.write(str(error) + '\n')
+			log_file.write('-----------------------------------\n\n')
+
+snippet logtryone
+	try:
+		cur.execute(sql, params)
+		result = cur.fetchone()
+		if result[0] is not None:
+			${1}
+	except Exception, e:
+		logerror(sql % params,e)
+
+snippet logtryall
+	try:
+		cur.execute(sql, params)
+		result = cur.fetchall()
+		if len(result) > 0:
+			for x in result:
+				${1}
+	except Exception, e:
+		logerror(sql % params,e)
+
+snippet remu
+	environ['REMOTE_USER']
