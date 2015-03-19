@@ -12,7 +12,7 @@ snippet psyco
 	
 	arguments = cgi.FieldStorage()
 	
-	${1:feature} = json.loads(str(arguments['${2:$1}'].value))
+	${1:feature} = str(arguments['${2:$1}'].value)
 	
 	conn_string = "host='' dbname='' user='' password=''"
 	conn = psycopg2.connect(conn_string)
@@ -21,13 +21,13 @@ snippet psyco
 	sql = '''
 	${3}
 	'''
-	params = ($2['${4}'],)
+	params = ($2,)
 	
 	cur.execute(sql, params)
 	conn.commit()
 	cur.close()
 	conn.close()
-	print 'done'
+	print json.dumps({'exit_status': 'done'})
 snippet sql
 	sql = '''
 	${1}
