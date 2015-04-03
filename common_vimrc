@@ -45,7 +45,7 @@ iab docid document.getElementById('')<Esc>hh
 set listchars=tab:\|\ 
 set list
 call pathogen#infect()
-autocmd BufEnter * :syntax sync fromstart
+autocmd BufEnter *.aspx,*.html,*.js,*.py :syntax sync fromstart
 set foldcolumn=1
 nnoremap <buffer> <F9> :exec '!python' shellescape(@%, 1)<cr>
 set spelllang=en_gb
