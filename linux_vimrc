@@ -16,3 +16,5 @@ if $COLORTERM == 'gnome-terminal'
 endif
 colors molokai
 filetype indent on
+command! -range=% Psql <line1>,<line2>y|new|put|%!psql
+command! -range=% Python <line1>,<line2>y|new|put|%!python
