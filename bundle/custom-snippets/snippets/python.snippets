@@ -1,3 +1,10 @@
+snippet thread
+	from threading import Thread
+	def ${1:function}(${2:arg}):
+		${3}
+	t1 = Thread(target=$1, args=($2,))
+	t1.start()
+	t1.join()
 snippet psyco
 	print "Content-type: text/plain; charset=iso-8859-1\n\n"
 	
