@@ -1,3 +1,10 @@
+snippet process
+	from multiprocessing import Process
+	def ${1:function}(${2:arg}):
+		${3}
+	p1 = Process(target=$1, args=($2,))
+	p1.start()
+	p1.join()
 snippet thread
 	from threading import Thread
 	def ${1:function}(${2:arg}):
