@@ -64,5 +64,5 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 "let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_quiet_messages = { "regex": ["multiple-statements","broad-except","bad-whitespace","Final newline","Line too long","docstring","indentation with tabs","invalid-name","Exactly one space","Too many"] }
+let g:syntastic_quiet_messages = { "regex": ["multiple-statements","broad-except","bad-whitespace","Final newline","Line too long","docstring","indentation with tabs","invalid-name","Exactly one space","Too many","redefined-outer-name"] }
 "let g:syntastic_html_checkers = ['jshint']
