@@ -53,6 +53,7 @@ autocmd BufEnter *.aspx,*.html,*.js,*.py :syntax sync fromstart
 set foldcolumn=1
 set spelllang=en_gb
 au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadBraces
 set cursorline
 set laststatus=2
 if version >= 700
