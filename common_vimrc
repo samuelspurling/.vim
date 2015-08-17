@@ -14,8 +14,8 @@ set window=25
 set hlsearch
 set nu rnu
 set ai
-set nobackup
-set noswapfile
+"set nobackup
+"set noswapfile
 let g:fuzzy_ignore = "*.png;*.PNG;*.JPG;*.jpg;*.GIF;*.gif;vendor/**;coverage/**;tmp/**;rdoc/**"
 " set pastetoggle=<F2>
 " set clipboard=unnamed
