@@ -42,3 +42,5 @@ nnoremap <kMinus> <C-x>
 autocmd BufWinLeave *.aspx mkview
 autocmd BufWinEnter *.aspx silent loadview
 colors molokai_win
+set guioptions-=T
+set lines=70 columns=130
