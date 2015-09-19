@@ -11,9 +11,10 @@ unlet s:cpo_save
 set mouse=a
 set runtimepath=~/.vim,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim74,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/after
 set guifont=UbuntuMono
-if $COLORTERM == 'gnome-terminal'
-  set t_Co=256
-endif
+"if $COLORTERM == 'gnome-terminal'
+"  set t_Co=256
+"endif
+set t_Co=256
 colors molokai
 filetype indent on
 command! -range=% Psql <line1>,<line2>y|new|put|%!psql
