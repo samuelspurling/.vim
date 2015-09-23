@@ -27,7 +27,7 @@ let g:pymode_rope = 0
 set noet ci pi sts=0 sw=4 ts=4 "Indent with tabs, align with spaces
 " highlight Test ctermbg=black guibg=black
 " match Test /\t/
-filetype plugin on
+"filetype plugin on
 " set omnifunc=pythoncomplete#Complete
 nmap <Space> i_<Esc>r
 map <F5> :syntax sync fromstart<CR>
