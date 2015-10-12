@@ -71,3 +71,6 @@ let g:syntastic_quiet_messages = { "regex": ["multiple-statements","broad-except
 "let g:syntastic_html_checkers = ['jshint']
 syntax on
 set showcmd		" display incomplete commands
+set wildmenu
+set lazyredraw
+inoremap jk <esc>
