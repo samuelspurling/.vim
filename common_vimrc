@@ -75,3 +75,11 @@ set wildmenu
 set lazyredraw
 inoremap jk <esc>
 map <silent> <leader>cf :call writefile([], expand("<cfile>"), "t")<cr>
+set scrolloff=5
+" after search, scroll screen to centre
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap * *zz
+nnoremap # #zz
+nnoremap g* g*zz
+nnoremap g# g#zz
