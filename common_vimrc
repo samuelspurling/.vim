@@ -74,3 +74,4 @@ set showcmd		" display incomplete commands
 set wildmenu
 set lazyredraw
 inoremap jk <esc>
+map <silent> <leader>cf :call writefile([], expand("<cfile>"), "t")<cr>
