@@ -12,7 +12,7 @@ set termencoding=utf-8
 set window=25
 " vim: set ft=vim :
 set hlsearch
-set nu rnu
+set nu " rnu
 set ai
 "set nobackup
 "set noswapfile
