@@ -85,3 +85,5 @@ nnoremap g* g*zz
 nnoremap g# g#zz
 " make paren highlighting more obvious
 hi MatchParen cterm=bold ctermbg=darkgrey ctermfg=lightgrey
+" make Y do y$ instead of yy
+nnoremap Y y$
