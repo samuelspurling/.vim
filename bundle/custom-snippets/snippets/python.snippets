@@ -13,7 +13,8 @@ snippet thread
 	t1.start()
 	t1.join()
 snippet psyco
-	print "Content-type: text/plain; charset=iso-8859-1\n\n"
+	print "Content-type: application/json\n"
+	#print "Content-type: text/plain; charset=iso-8859-1\n\n"
 	
 	from os import environ
 	import cgi
@@ -35,13 +36,20 @@ snippet psyco
 	sql = '''
 	${3}
 	'''
-	params = ($2,)
-	
+	params = \
+	(\
+		$2,\
+	)
 	cur.execute(sql, params)
+	#result = cur.fetchone()
+	result = cur.fetchall()
 	conn.commit()
 	cur.close()
 	conn.close()
-	print json.dumps({'exit_status': 'done'})
+	print json.dumps(\
+	{\
+		'exit_status': 'done',\
+	})
 snippet sql
 	sql = '''
 	${1}
