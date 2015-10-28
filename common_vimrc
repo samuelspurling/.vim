@@ -87,3 +87,5 @@ nnoremap g# g#zz
 hi MatchParen cterm=bold ctermbg=darkgrey ctermfg=lightgrey
 " make Y do y$ instead of yy
 nnoremap Y y$
+" keep multi-cursor after escape from insert
+let g:multi_cursor_exit_from_insert_mode = 0
