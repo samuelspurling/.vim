@@ -89,3 +89,5 @@ hi MatchParen cterm=bold ctermbg=darkgrey ctermfg=lightgrey
 nnoremap Y y$
 " keep multi-cursor after escape from insert
 let g:multi_cursor_exit_from_insert_mode = 0
+" look for tags file in parent directories (;)
+set tags=tags;
