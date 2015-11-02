@@ -93,5 +93,5 @@ let g:multi_cursor_exit_from_insert_mode = 0
 set tags=./tags;
 nnoremap <leader>j :lnext<cr>
 nnoremap <leader>k :lprev<cr>
-nnoremap <leader>h :cnext<cr>
-nnoremap <leader>l :cprev<cr>
+nnoremap <leader>l :cnext<cr>
+nnoremap <leader>h :cprev<cr>
