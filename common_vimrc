@@ -91,3 +91,7 @@ nnoremap Y y$
 let g:multi_cursor_exit_from_insert_mode = 0
 " look for tags file in parent directories (;)
 set tags=./tags;
+nnoremap <leader>j :lnext<cr>
+nnoremap <leader>k :lprev<cr>
+nnoremap <leader>h :cnext<cr>
+nnoremap <leader>l :cprev<cr>
