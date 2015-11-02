@@ -69,6 +69,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_quiet_messages = { "regex": ["multiple-statements","broad-except","bare-except","bad-whitespace","Final newline","Line too long","docstring","indentation with tabs","invalid-name","Exactly one space","Too many","redefined-outer-name"] }
 "let g:syntastic_html_checkers = ['jshint']
+let g:syntastic_python_checkers = ['pylint']
 syntax on
 set showcmd		" display incomplete commands
 set wildmenu
