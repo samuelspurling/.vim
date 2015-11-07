@@ -100,3 +100,5 @@ nnoremap <leader>l :cnext<cr>
 nnoremap <leader>h :cprev<cr>
 " working directory, r=repo a=ancestor
 let g:ctrlp_working_path_mode = 'ra'
+" gf enhancements
+set suffixesadd+=.py

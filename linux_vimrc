@@ -19,3 +19,6 @@ colors molokai
 filetype indent on
 command! -range=% Psql <line1>,<line2>y|new|put|%!psql
 command! -range=% Python <line1>,<line2>y|new|put|%!python
+" gf enhancements
+set path+=/usr/lib/python2.7
+set path+=/c/Python27/lib
