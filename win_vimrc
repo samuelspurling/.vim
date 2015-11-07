@@ -44,3 +44,5 @@ autocmd BufWinEnter *.aspx silent loadview
 colors molokai_win
 set guioptions-=T
 set lines=70 columns=130
+" gf enhancements
+set path+=c:\Python27\Lib
