@@ -64,6 +64,8 @@ vmap ]u   :call PythonUncommentSelection()<CR>
 map  ]c   :call PythonSelectObject("class")<CR>
 map  ]d   :call PythonSelectObject("function")<CR>
 
+nnoremap  [[  :call PythonNextLine(-1)<CR>
+nnoremap  ]]  :call PythonNextLine(1)<CR>
 map  ]<up>    :call PythonNextLine(-1)<CR>
 map  ]<down>  :call PythonNextLine(1)<CR>
 " You may prefer use <s-up> and <s-down>... :-)
