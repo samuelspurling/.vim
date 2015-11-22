@@ -121,3 +121,4 @@ set suffixesadd+=.py
 " find next line at current indentation
 nnoremap <silent> <leader>, :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>
 nnoremap <silent> <leader>. :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%>' . line('.') . 'l\S', 'e')<CR>
+cnoremap %% <C-R>=expand('%:h').'/'<CR>
