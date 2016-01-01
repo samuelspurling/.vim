@@ -1,3 +1,14 @@
+snippet popen
+	import subprocess
+	command = '${1}'
+	process = subprocess.Popen(\
+		command,\
+		shell=True,\
+		stdin=subprocess.PIPE,\
+		stdout=subprocess.PIPE,\
+		stderr=subprocess.PIPE\
+	)
+	process_stdout,process_stderr = process.communicate(input=${2:''})
 snippet process
 	from multiprocessing import Process
 	def ${1:function}(${2:arg}):
