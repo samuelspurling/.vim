@@ -145,8 +145,20 @@ function! InvertWord()
 		normal ciwright
 	elseif expand("<cfile>") ==# 'right'
 		normal ciwleft
+	elseif expand("<cfile>") ==# 'absolute'
+		normal ciwrelative
+	elseif expand("<cfile>") ==# 'relative'
+		normal ciwabsolute
+	elseif expand("<cfile>") ==# 'block'
+		normal ciwhidden
+	elseif expand("<cfile>") ==# 'hidden'
+		normal ciwblock
+	elseif expand("<cfile>") ==# 'class='
+		normal ciwid
+	elseif expand("<cfile>") ==# 'id='
+		normal ciwclass
 	else
-		echo 'invert?'
+		echo 'invert '.expand("<cfile>").'?'
 	endif
 endfunction
 map <silent> <leader>s :call InvertWord()<cr>
