@@ -127,3 +127,27 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
 endif
+" invert word
+function! InvertWord()
+	if expand("<cfile>") ==# 'true'
+		normal ciwfalse
+	elseif expand("<cfile>") ==# 'false'
+		normal ciwtrue
+	elseif expand("<cfile>") ==# 'True'
+		normal ciwFalse
+	elseif expand("<cfile>") ==# 'False'
+		normal ciwTrue
+	elseif expand("<cfile>") ==# 'up'
+		normal ciwdown
+	elseif expand("<cfile>") ==# 'down'
+		normal ciwup
+	elseif expand("<cfile>") ==# 'left'
+		normal ciwright
+	elseif expand("<cfile>") ==# 'right'
+		normal ciwleft
+	else
+		echo 'invert?'
+	endif
+endfunction
+map <silent> <leader>s :call InvertWord()<cr>
+
