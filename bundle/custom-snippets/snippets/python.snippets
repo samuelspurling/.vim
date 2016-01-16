@@ -1,3 +1,23 @@
+snippet gpg
+	import base64
+	import subprocess
+
+	def gpg(passphrase,the_data,direction='c'):
+		# direction - c=encrypt, d=decrypt
+		command = 'gpg --passphrase %s -%s'%(passphrase,direction)
+		process = subprocess.Popen(\
+			command,\
+			shell=True,\
+			stdin=subprocess.PIPE,\
+			stdout=subprocess.PIPE,\
+			stderr=subprocess.PIPE\
+		)
+		process_stdout,process_stderr = process.communicate(input=the_data)
+		return process_stdout
+
+	encoded = base64.b64encode(gpg('1234', 'this is a test', 'c'))
+	print 'encoded:', encoded
+	print 'gpg:', gpg('1234',base64.b64decode(encoded),'d')
 snippet popen
 	import subprocess
 	command = '${1}'
