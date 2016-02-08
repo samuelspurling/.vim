@@ -157,6 +157,14 @@ function! InvertWord()
 		normal ciwid
 	elseif expand("<cfile>") ==# 'id='
 		normal ciwclass
+	elseif expand("<cfile>") ==# 'ON'
+		normal ciwOFF
+	elseif expand("<cfile>") ==# 'OFF'
+		normal ciwON
+	elseif expand("<cfile>") ==# 'on'
+		normal ciwoff
+	elseif expand("<cfile>") ==# 'off'
+		normal ciwon
 	else
 		echo 'invert '.expand("<cfile>").'?'
 	endif
