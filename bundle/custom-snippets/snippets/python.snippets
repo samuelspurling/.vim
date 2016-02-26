@@ -89,7 +89,10 @@ snippet sql
 	sql = '''
 	${1}
 	'''
-	params = (${2},)
+	params = \
+	(\
+		${2},\
+	)
 snippet ex
 	cur.execute(${1:sql},${2:params})
 	result = cur.fetchall()
