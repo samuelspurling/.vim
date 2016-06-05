@@ -84,6 +84,8 @@ let g:syntastic_quiet_messages = { "regex": [
 \	"invalid-name",
 \	"multiple-statements",
 \	"parens after 'print'",
+\	"picamera",
+\	"wrong-import-order",
 \	"redefined-outer-name"
 \] }
 "let g:syntastic_html_checkers = ['jshint']
