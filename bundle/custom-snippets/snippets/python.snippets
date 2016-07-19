@@ -90,9 +90,9 @@ snippet sql
 	${1}
 	'''
 	params = \
-	(\
-		${2},\
-	)
+	{\
+		'${2:change_id}': $2,\
+	}
 snippet ex
 	cur.execute(${1:sql},${2:params})
 	result = cur.fetchall()
