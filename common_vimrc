@@ -182,3 +182,5 @@ set statusline=%<%F%h%m%r\ [%{&ff}]\ (%{strftime(\"%H:%M\ %d/%m/%Y\",getftime(ex
 " decode url
 nnoremap <leader>u :s/%3a/:/g<cr>:s/%2f/\\/g<cr>:s/%2c/,/g<cr>
 nnoremap <leader>ue :s/%3a/:/g<cr>:s/%2f/\\/g<cr>:s/%2c/,/g<cr>:s/&/\\&/g<cr>:s/?/\\?/g<cr>
+nnoremap <leader>i :bn<cr>
+nnoremap <leader>o :bp<cr>
