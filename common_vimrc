@@ -123,8 +123,21 @@ let g:ctrlp_working_path_mode = 'ra'
 " gf enhancements
 set suffixesadd+=.py
 " find next line at current indentation
-nnoremap <silent> <leader>, :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>
-nnoremap <silent> <leader>. :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%>' . line('.') . 'l\S', 'e')<CR>
+"nnoremap <silent> <leader>, :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>
+"nnoremap <silent> <leader>. :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%>' . line('.') . 'l\S', 'e')<CR>
+nnoremap <leader>,<Space> ?^\S<cr>
+nnoremap <leader>,,<Space> ?^\s\S<cr>
+nnoremap <leader>,,,<Space> ?^\s\s\S<cr>
+nnoremap <leader>.<Space> /^\S<cr>
+nnoremap <leader>..<Space> /^\s\S<cr>
+nnoremap <leader>...<Space> /^\s\s\S<cr>
+
+vnoremap <leader>,<Space> ?^\S<cr>
+vnoremap <leader>,,<Space> ?^\s\S<cr>
+vnoremap <leader>,,,<Space> ?^\s\s\S<cr>
+vnoremap <leader>.<Space> /^\S<cr>
+vnoremap <leader>..<Space> /^\s\S<cr>
+vnoremap <leader>...<Space> /^\s\s\S<cr>
 cnoremap %% <C-R>=expand('%:h').'/'<CR>
 " see changes made before saving
 if !exists(":DiffOrig")
