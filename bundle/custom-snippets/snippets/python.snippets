@@ -74,7 +74,7 @@ snippet psyco
 	'''
 	params = \
 	{\
-		$1: '$1',\
+		'$1': $1,\
 	}
 	cur.execute(sql, params)
 	result = cur.fetchall()
