@@ -231,3 +231,8 @@ nnoremap <leader>ue :s/%3a/:/g<cr>:s/%2f/\\/g<cr>:s/%2c/,/g<cr>:s/&/\\&/g<cr>:s/
 nnoremap <leader>i :bn<cr>
 nnoremap <leader>o :bp<cr>
 nnoremap Q :q<cr>
+vnoremap <leader>a: :Tabularize /:<cr>
+vnoremap <leader>a; :Tabularize /:<cr>
+vnoremap <leader>a= :Tabularize /=<cr>
+vnoremap <leader>a[ :Tabularize /{<cr>
+set nowrapscan
