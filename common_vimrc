@@ -125,7 +125,7 @@ set suffixesadd+=.py
 " find next line at current indentation
 "nnoremap <silent> <leader>, :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>
 "nnoremap <silent> <leader>. :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%>' . line('.') . 'l\S', 'e')<CR>
-function! NextSameWhitespace(direction,start)
+function! NextSameWhitespace(direction,start,invert)
 	if line('.') < line("'>")
 		return 1
 	endif
@@ -143,19 +143,34 @@ function! NextSameWhitespace(direction,start)
 	endwhile
 	let l:theCommand .= '\S'
 	if a:direction == 'f'
-		silent! exe "normal " . a:start . "/" . l:theCommand . "\<cr>"
+		if a:invert == 0
+			silent! exe "normal " . a:start . "/" . l:theCommand . "\<cr>"
+		endif
+		if a:invert == 1
+			silent! exe "normal " . a:start . "/^\\(\\(" . l:theCommand . "\\)\\@!.\\)*$\<cr>"
+		endif
 	endif
 	if a:direction == 'b'
-		silent! exe "normal 0" . a:start . "?" . l:theCommand . "\<cr>"
+		if a:invert == 0
+			silent! exe "normal 0" . a:start . "?" . l:theCommand . "\<cr>"
+		endif
+		if a:invert == 1
+			silent! exe "normal 0" . a:start . "?^\\(\\(" . l:theCommand . "\\)\\@!.\\)*$\<cr>"
+		endif
 	endif
 	if l:resetwrapscan == 1
 		set wrapscan
 	endif
 endfunction
-nnoremap <silent> <leader>, :call NextSameWhitespace('b','')<cr>
-vnoremap <silent> <leader>, :call NextSameWhitespace('b','gv')<cr>
-nnoremap <silent> <leader>. :call NextSameWhitespace('f','')<cr>
-vnoremap <silent> <leader>. :call NextSameWhitespace('f','gv')<cr>
+nnoremap <silent> <leader>, :call NextSameWhitespace('b','',0)<cr>
+vnoremap <silent> <leader>, :call NextSameWhitespace('b','gv',0)<cr>
+nnoremap <silent> <leader>. :call NextSameWhitespace('f','',0)<cr>
+vnoremap <silent> <leader>. :call NextSameWhitespace('f','gv',0)<cr>
+
+nnoremap <silent> <leader><leader>, :call NextSameWhitespace('b','',1)<cr>
+vnoremap <silent> <leader><leader>, :call NextSameWhitespace('b','gv',1)<cr>
+nnoremap <silent> <leader><leader>. :call NextSameWhitespace('f','',1)<cr>
+vnoremap <silent> <leader><leader>. :call NextSameWhitespace('f','gv',1)<cr>
 cnoremap %% <C-R>=expand('%:h').'/'<CR>
 " see changes made before saving
 if !exists(":DiffOrig")
