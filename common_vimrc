@@ -125,19 +125,37 @@ set suffixesadd+=.py
 " find next line at current indentation
 "nnoremap <silent> <leader>, :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%<' . line('.') . 'l\S', 'be')<CR>
 "nnoremap <silent> <leader>. :call search('^'. matchstr(getline('.'), '\(^\s*\)') .'\%>' . line('.') . 'l\S', 'e')<CR>
-nnoremap <leader>,<Space> ?^\S<cr>
-nnoremap <leader>,,<Space> ?^\s\S<cr>
-nnoremap <leader>,,,<Space> ?^\s\s\S<cr>
-nnoremap <leader>.<Space> /^\S<cr>
-nnoremap <leader>..<Space> /^\s\S<cr>
-nnoremap <leader>...<Space> /^\s\s\S<cr>
-
-vnoremap <leader>,<Space> ?^\S<cr>
-vnoremap <leader>,,<Space> ?^\s\S<cr>
-vnoremap <leader>,,,<Space> ?^\s\s\S<cr>
-vnoremap <leader>.<Space> /^\S<cr>
-vnoremap <leader>..<Space> /^\s\S<cr>
-vnoremap <leader>...<Space> /^\s\s\S<cr>
+function! NextSameWhitespace(direction,start)
+	if line('.') < line("'>")
+		return 1
+	endif
+	let l:resetwrapscan = 0
+	if &wrapscan
+		let l:resetwrapscan = 1
+		set nowrapscan
+	endif
+	let numLeadingSpacesTabs = strlen(substitute(getline('.'), '^\([ \t]*\).*$', '\1', ''))
+	let l:theCommand = '^'
+	let i = 1
+	while i <= numLeadingSpacesTabs
+		let l:theCommand .= '\s'
+		let i += 1
+	endwhile
+	let l:theCommand .= '\S'
+	if a:direction == 'f'
+		silent! exe "normal " . a:start . "/" . l:theCommand . "\<cr>"
+	endif
+	if a:direction == 'b'
+		silent! exe "normal 0" . a:start . "?" . l:theCommand . "\<cr>"
+	endif
+	if l:resetwrapscan == 1
+		set wrapscan
+	endif
+endfunction
+nnoremap <silent> <leader>, :call NextSameWhitespace('b','')<cr>
+vnoremap <silent> <leader>, :call NextSameWhitespace('b','gv')<cr>
+nnoremap <silent> <leader>. :call NextSameWhitespace('f','')<cr>
+vnoremap <silent> <leader>. :call NextSameWhitespace('f','gv')<cr>
 cnoremap %% <C-R>=expand('%:h').'/'<CR>
 " see changes made before saving
 if !exists(":DiffOrig")
