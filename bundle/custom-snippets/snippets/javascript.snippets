@@ -1,14 +1,18 @@
 snippet xhr
-	xhr=new XMLHttpRequest();
-	xhr.open("post","${1}",true);
-	xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-	xhr.onreadystatechange=function(){
-		if(xhr.readyState==4){
-			console.log(xhr.responseText);
-			the_response=JSON.parse(xhr.responseText);
+	var ${1:xhr}=new XMLHttpRequest();
+	$1.open("post","${2:url}",true);
+	$1.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	$1.onreadystatechange=function(){
+		if($1.readyState==4){
+			if($1.status==200) {
+				console.log($1.responseText);
+				the_response=JSON.parse($1.responseText);
+			}
+			else { alert('error'); }
 		}
 	};
-	xhr.send(${2});
+	var $1_query_string = '${3:key}=' + encodeURIComponent('${4:value}').replace(/%20/g, '+').replace(/%0D/g, '');
+	$1.send($1_query_string);
 snippet docid
 	document.getElementById('${1}')${2}
 snippet log
