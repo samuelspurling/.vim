@@ -239,3 +239,9 @@ set nowrapscan
 " don't break long lines when typing
 set textwidth=0
 set wrapmargin=0
+"let g:validator_python_flake8_args = '--ignore=W191,E501'
+"let b:syntastic_skip_checks = 1
+let g:syntastic_mode_map = {
+	\ "mode": "active",
+	\ "active_filetypes": [],
+	\ "passive_filetypes": ["python", "javascript"] }
