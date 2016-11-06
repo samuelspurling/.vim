@@ -18,7 +18,7 @@ set ai
 "set noswapfile
 let g:fuzzy_ignore = "*.png;*.PNG;*.JPG;*.jpg;*.GIF;*.gif;vendor/**;coverage/**;tmp/**;rdoc/**"
 " set pastetoggle=<F2>
-" set clipboard=unnamed
+set clipboard=unnamed
 set smartcase
 set ignorecase
 set incsearch
@@ -51,7 +51,7 @@ iab docid document.getElementById('')<Esc>hh
 set listchars=tab:\|\ 
 set list
 call pathogen#infect()
-autocmd BufEnter *.aspx,*.html,*.js,*.py :syntax sync fromstart
+autocmd BufEnter *.aspx,*.html,*.js,*.py,*.map :syntax sync fromstart
 set foldcolumn=1
 set spelllang=en_gb
 au VimEnter * RainbowParenthesesToggle
@@ -221,8 +221,6 @@ function! InvertWord()
 	endif
 endfunction
 map <silent> <leader>s :call InvertWord()<cr>
-" y & p goto "+
-set clipboard=unnamed
 set vb
 " Show EOL type and last modified timestamp, right after the filename
 set statusline=%<%F%h%m%r\ [%{&ff}]\ (%{strftime(\"%H:%M\ %d/%m/%Y\",getftime(expand(\"%:p\")))})%=%l,%c%V\ %P
