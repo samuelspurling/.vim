@@ -163,6 +163,7 @@ function! NextSameWhitespace(direction,start,invert)
 		set wrapscan
 	endif
 endfunction
+cnoreabbrev json !python -m json.tool
 nnoremap <silent> <leader>, :call NextSameWhitespace('b','',0)<cr>
 vnoremap <silent> <leader>, :call NextSameWhitespace('b','gv',0)<cr>
 nnoremap <silent> <leader>. :call NextSameWhitespace('f','',0)<cr>
