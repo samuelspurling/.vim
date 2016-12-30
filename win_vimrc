@@ -37,6 +37,7 @@ set diffexpr=MyDiff()
 set keymodel-=stopsel
 set dir=$TMP
 set backupdir=$TMP
+set undodir=$TMP
 nnoremap <kPlus> <C-a>
 nnoremap <kMinus> <C-x>
 autocmd BufWinLeave *.aspx mkview
