@@ -236,3 +236,6 @@ vnoremap <leader>a; :Tabularize /:<cr>
 vnoremap <leader>a= :Tabularize /=<cr>
 vnoremap <leader>a[ :Tabularize /{<cr>
 set nowrapscan
+" don't break long lines when typing
+set textwidth=0
+set wrapmargin=0
