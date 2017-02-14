@@ -169,7 +169,6 @@ function! NextSameWhitespace(direction,start,invert)
 		set wrapscan
 	endif
 endfunction
-"cnoreabbrev json !python -m json.tool
 nnoremap <silent> <leader>, :call NextSameWhitespace('b','',0)<cr>
 vnoremap <silent> <leader>, :call NextSameWhitespace('b','gv',0)<cr>
 nnoremap <silent> <leader>. :call NextSameWhitespace('f','',0)<cr>
@@ -276,3 +275,5 @@ function! UnMinify()
     %s/[^\s]\zs[=&|]\+\ze[^\s]/ \0 /g
     normal ggVG=
 endfunction
+
+command -range=% Json <line1>,<line2>!python -m json.tool
