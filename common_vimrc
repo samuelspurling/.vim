@@ -121,7 +121,15 @@ let g:multi_cursor_exit_from_insert_mode = 0
 let g:multi_cursor_insert_maps={'j':1}
 " look for tags file in parent directories (;)
 set tags=./tags;
-nnoremap <leader>j :lnext<cr>
+"nnoremap <leader>j :lnext<cr>
+function! GotoNextError()
+	try
+		lnext
+	catch
+		lfirst
+	endtry
+endfunction
+nnoremap <leader>j :call GotoNextError()<cr>
 nnoremap <leader>k :lprev<cr>
 nnoremap <leader>l :cnext<cr>
 nnoremap <leader>h :cprev<cr>
