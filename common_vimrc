@@ -52,6 +52,8 @@ set listchars=tab:\|\
 set list
 call pathogen#infect()
 autocmd BufEnter *.aspx,*.html,*.js,*.py,*.map :syntax sync fromstart
+autocmd BufEnter *.aspx,*.html,*.js,*.py,*.map :highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd BufEnter *.aspx,*.html,*.js,*.py,*.map :match ExtraWhitespace /^\t*\zs \+\ze\t\+\|\s\+$/
 set foldcolumn=1
 set spelllang=en_gb
 au VimEnter * RainbowParenthesesToggle
