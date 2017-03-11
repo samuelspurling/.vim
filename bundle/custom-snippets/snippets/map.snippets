@@ -1,0 +1,70 @@
+snippet map
+	MAP
+		MAXSIZE 999999
+		EXTENT 0 0 10000000 10000000
+		STATUS ON
+		UNITS METERS
+		FONTSET "fonts/font.list"
+		SYMBOLSET "symbols.sym"
+		PROJECTION
+			"init=epsg:27700"
+		END # PROJECTION
+		WEB
+			METADATA
+				"ows_enable_request"	"*"
+				"ows_srs"	"EPSG:27700"
+			END # METADATA
+		END # WEB
+		sql${0}
+	END # MAP
+snippet scalebar
+	SCALEBAR
+		IMAGECOLOR 255 255 255
+		LABEL
+			TYPE TRUETYPE
+			FONT DroidSans
+			BUFFER 1
+			SIZE 15
+			COLOR 0 0 0
+			OUTLINECOLOR 255 255 255
+		END # LABEL
+		STYLE 1
+		SIZE 200 10
+		COLOR 0 0 0
+		UNITS meters
+		INTERVALS 1
+		TRANSPARENT FALSE
+		STATUS OFF
+	END # Scalebar
+snippet shapefile
+	LAYER
+		NAME "${0}"
+		GROUP "group_name"
+		MINSCALEDENOM 200000
+		STATUS ON
+		TILEINDEX "shapefile.shp"
+		TILEITEM "Location"
+		TYPE RASTER
+	END # LAYER
+snippet sql
+	LAYER
+		NAME "${0}"
+		MAXSCALEDENOM 5000
+		VALIDATION
+			'THING_TO_VALIDATE' '^[a-zA-Z0-9\-_]*$'
+		END # VALIDATION
+		STATUS ON
+		TYPE LINE
+		CONNECTIONTYPE POSTGIS
+		CONNECTION "host=localhost dbname=dbname user=user password=password port=5432"
+		PROCESSING "CLOSE_CONNECTION=DEFER"
+		DATA "geom from table using SRID=27700 using unique id"
+		FILTER (column_to_filter = '%THING_TO_VALIDATE%')
+		CLASS
+			STYLE
+				COLOR 0 0 0
+				WIDTH 1
+				ANTIALIAS true
+			END # STYLE
+		END # CLASS
+	END # LAYER
