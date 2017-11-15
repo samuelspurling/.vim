@@ -29,3 +29,12 @@ let &t_SI.="\e[5 q"
 let &t_EI.="\e[1 q"
 let &t_te.="\e[0 q"
 set laststatus=2
+let g:lightline = {
+    \ 'active': {
+    \ 'left': [ [ 'mode', 'paste'],
+    \           [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+    \ },
+    \ 'component_function': {
+    \   'gitbranch': 'gitbranch#name'
+    \ },
+    \ }
