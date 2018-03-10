@@ -91,10 +91,10 @@ let g:syntastic_quiet_messages = { "regex": [
 \	"multiple-statements",
 \	"parens after 'print'",
 \	"picamera",
-\	"wrong-import-order",
 \	"is already defined",
 \	"is better written in dot notation",
-\	"redefined-outer-name"
+\	"redefined-outer-name",
+\	"is only available in ES6"
 \] }
 let g:syntastic_html_checkers = ['htmlhint', 'jshint']
 let g:syntastic_python_checkers = ['pyflakes']
