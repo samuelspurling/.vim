@@ -288,4 +288,21 @@ function! UnMinify()
     normal ggVG=
 endfunction
 
+function! CheckCssExists()
+	if filereadable(expand('%:r') . '.scss')
+		echo 'WARNING: .scss exists for this file. Changes may be overwritten when it is compiled!'
+	endif
+endfunction
+
+function! RunSassCompiler()
+	if strpart(expand('%:tr'), 0, 1) == '_'
+		echo '.scss files beginning with _ are restricted from being compiled!'
+	else
+		execute "!node-sass % %:r.css"
+	endif
+endfunction
+
+au BufWritePost *.scss call RunSassCompiler()
+au BufEnter *.css call CheckCssExists()
+
 command -range=% Json <line1>,<line2>!python -m json.tool
