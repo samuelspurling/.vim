@@ -6,7 +6,7 @@ Personal settings for Vim.
 If new system setup, use https://github.com/samuelspurling/ubuntu-install instead of cloning from here.
 Most submodules are pretty hassle free except YouCompleteMe, which requires some extra setup.
 
-Otherwise, first install dependencies for YouCompleteMe:
+First install dependencies for YouCompleteMe:
 ```
 sudo apt-get install build-essential cmake
 ```
