@@ -13,7 +13,7 @@ sudo apt-get install build-essential cmake
 
 Then clone the repository to ~/.vim:
 ```
-git clone --recurse-submodules https://github.com/samuelspurling/.vim ~/.vim
+git clone https://github.com/samuelspurling/.vim ~/.vim
 ```
 
 Finally, run YouCompleteMe installation:
